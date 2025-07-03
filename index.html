@@ -3,6 +3,9 @@
 <head>
    <meta charset="utf-8">
 <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAZ4efAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREREREREAEAAAAAAAAQAQEREREREBABAREREREQEAEBERERERAQAQEREREREBABAREREREQEAEBERERERAQAQEREREREBABAREREREQEAEBERERERAQAQEREREREBABAAAAAAAAEAEREREREREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon">
+            <!--Stop Google:-->
+    <META NAME="robots" CONTENT="noindex,nofollow">
+
    <title>CARDBOARD!</title>    
    <!--
 CARDBOARD
@@ -71,6 +74,17 @@ httpc.onreadystatechange = function() {
     }
 };
 
+
+text = "";
+var httpc = new XMLHttpRequest();
+httpc.open("GET", "load-file.php?filename=text.txt", true);
+httpc.send();
+httpc.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        text = this.responseText;
+        document.getElementById("text").innerHTML = text;  
+    }
+};
 
 </script>
 </body>
