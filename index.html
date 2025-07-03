@@ -18,18 +18,17 @@ CARDBOARD
 <div id = "qrcode-here"></div>
 <a id = "link-there"></a>
 <div id = "qrcode-there"></div>
+<div id = "text"></div>
+<div id = "freebox"></div>
+<a href = "branch.html">BRANCH</a>
 <a href = "link.html">EDIT LINK</a> 
 <a href = "text.html">EDIT TEXT</a>
-<div id = "text"></div>
-<a href = "branch.html">BRANCH</a>
+<a href = "image-feed.html">IMAGE FEED</a>
 <a href = "edit-index.html">EDIT PAGE</a>
 <a href = "edit-html.html">EDIT HTML CODE</a>
 <a href = "https://github.com/lafelabs/CARDBOARD">GLOBAL README</a>
 <a href = "readme.html">LOCAL README</a>
 <a href = "sketch.html">SKETCH</a>
-<img src = "sketch.png">
-<a href = "image-feed.html">IMAGE FEED</a>
-<div id = "freebox"></div>
 
 <style>
     #text{
@@ -108,17 +107,14 @@ function loadimagefeed(){
     for(var index = 0;index < uploadImages.length;index++) {
         if(uploadImages[index].includes(".png") || uploadImages[index].includes(".PNG") || uploadImages[index].includes(".jpg") || uploadImages[index].includes(".JPG") ||uploadImages[index].includes(".jpeg") || uploadImages[index].includes(".gif") ||uploadImages[index].includes(".GIF") ){
             
-            if(uploadImages[index] != "sketch.png"){
-                var newuploadbox = document.createElement("DIV");
-                newuploadbox.classList.add("imagebox");
-                var newimg = document.createElement("IMG");
-                newimg.src = uploadImages[index];
-                newimg.classList.add("uploadimage");
-                newuploadbox.appendChild(newimg);
-                document.getElementById("freebox").appendChild(newuploadbox);
-                
-            }
-    
+            var newuploadbox = document.createElement("DIV");
+            newuploadbox.classList.add("imagebox");
+            var newimg = document.createElement("IMG");
+            newimg.src = uploadImages[index];
+            newimg.classList.add("uploadimage");
+            newuploadbox.appendChild(newimg);
+            document.getElementById("freebox").appendChild(newuploadbox);
+            
         }
     }    
 }
