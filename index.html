@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+<link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAZ4efAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREREREREAEAAAAAAAAQAQEREREREBABAREREREQEAEBERERERAQAQEREREREBABAREREREQEAEBERERERAQAQEREREREBABAREREREQEAEBERERERAQAQEREREREBABAAAAAAAAEAEREREREREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon">
+   <title>CARDBOARD!</title>    
+   <!--
+CARDBOARD
+   -->
+   <script src = "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+   <link rel="stylesheet" href="cardboard.css">    
+</head>
+<body> 
+<a id = "link-here"></a>
+<div id = "qrcode-here"></div>
+<a id = "link-there"></a>
+<div id = "qrcode-there"></div>
+<a href = "link.html">LINK</a> 
+<a href = "text.html">TEXT</a>
+<div id = "text"></div>
+<a href = "branch.html">BRANCH</a>
+<a href = "edit-index.html">EDIT</a>
+<a href = "https://github.com/lafelabs/CARDBOARD">CODE</a>
+<a href = "readme.html">README</a>
+<a href = "sketch.html">SKETCH</a>
+<img src = "sketch.png">
+<a href = "image.html">IMAGE</a>
+<img src = "image.png">
+
+<style>
+    #qrcode img{
+        border:solid;
+        border-color:white;
+        border-width:10px;
+    }
+</style>
+<script>
+here = window.location.href;
+document.getElementById("link-here").innerHTML = here;    
+document.getElementById("link-here").href = here;    
+codesquaresize = 500;
+
+qrcode = new QRCode(document.getElementById("qrcode-here"), {
+	text: here,
+	width: codesquaresize,
+	height: codesquaresize,
+	colorDark : "#000000",
+	colorLight : "#ffffff",
+	correctLevel : QRCode.CorrectLevel.H
+});
+
+link = "";
+var httpc = new XMLHttpRequest();
+httpc.open("GET", "load-file.php?filename=link.txt", true);
+httpc.send();
+httpc.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        link = this.responseText;
+        document.getElementById("link-there").href = link;  
+        document.getElementById("link-there").innerHTML = link;  
+        qrcode2 = new QRCode(document.getElementById("qrcode-there"), {
+        	text: link,
+        	width: codesquaresize,
+        	height: codesquaresize,
+        	colorDark : "#000000",
+        	colorLight : "#ffffff",
+        	correctLevel : QRCode.CorrectLevel.H
+        });
+
+
+    }
+};
+
+
+</script>
+</body>
+</html>
+
+
+    
+    
