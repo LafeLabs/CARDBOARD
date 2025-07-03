@@ -1,5 +1,6 @@
 {
     "html": [
+        "README.md",
         "branch.html",
         "cardboard.css",
         "dna.txt",
@@ -7,10 +8,14 @@
         "edit-index.html",
         "edit-php.html",
         "feed.html",
+        "image-feed.html",
         "index.html",
         "link.html",
         "link.txt",
-        "readme.html"
+        "readme.html",
+        "sketch.html",
+        "text.html",
+        "text.txt"
     ],
     "php": [
         "branch.txt",
