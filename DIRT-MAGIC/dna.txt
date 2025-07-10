@@ -15,9 +15,7 @@
         "readme.html",
         "sketch.html",
         "text.html",
-        "text.txt",
-        "wall.html",
-        "wall.txt"
+        "text.txt"
     ],
     "php": [
         "branch.txt",
